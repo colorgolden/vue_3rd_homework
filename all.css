@@ -1,0 +1,179 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.background-section {
+    background-image: url('./img/login_bg.jpg');
+    /* 可以添加其他背景相關的 CSS 屬性，如背景大小、重複、位置等 */
+    background-size: cover; /* 覆蓋整個區域 */
+    background-repeat: no-repeat; /* 不重複 */
+  }
+
+@font-face {
+    font-family: '清松手寫體';  /* 指定字體家族名稱 */
+    src: url('./font/JasonHandwriting2.ttf') format("truetype");  /* 使用正確的檔案擴展名 */
+    src: url('./font/JasonHandwriting2.woff') format("woff");  /* 使用正確的檔案擴展名 */
+}
+
+.small-img{
+    height: 50px;
+    width: 50px;
+}
+
+img {
+    object-fit: contain;
+    max-width: 100%;
+  }
+.card-img-top{
+    height: 300px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav {
+    background-color: #f8f9fa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_menu {
+    list-style: none;
+    display: flex;
+}
+
+.main_menu li {
+    margin-right: 20px;
+}
+
+.card {
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-success {
+    color: #28a745;
+}
+
+.text-secondary {
+    color: #6c757d;
+}
+
+.page-sidebar {
+    display: flex;
+    flex-direction: row; /* Change to row to make it horizontal */
+    padding: 10px;
+}
+
+.page-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.page-sidebar li {
+    margin-right: 20px;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box > div {
+    flex: 1;
+}
+
+.h3{
+    text-align: left;
+    font-size: 36px;
+    font-family: '清松手寫體';
+}
+.h6{
+    text-align: center;
+    font-family: '清松手寫體';
+}    
+
+.p{
+    text-align: center;
+    font-family: JasonHandwriting2;
+}    
