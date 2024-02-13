@@ -58,7 +58,7 @@ const app = {
         .then((res) => {
           console.log(res);
           console.log(username,password);
-          window.location.href = 'admin_products.html'; //跳轉到products頁面
+          window.location.href = 'index.html'; //跳轉到products頁面
           const { token, expired } = res.data;
           document.cookie = `newToken=${token}; expires=${new Date(expired)};`;
         })
