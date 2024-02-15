@@ -96,7 +96,7 @@ const app = {
           this.products = res.data.products;
         })
         .catch((error) => {
-          alert(error.data.message);
+          alert('取得產品資料失敗', error.data.message);
         })
     },
 
@@ -130,7 +130,7 @@ const app = {
         delProductModal.hide();
       })
       .catch((error) => {
-        alert(error.data.message);
+        alert('沒有正確刪除產品',error.data.message);
       })
     },
 
@@ -143,7 +143,7 @@ const app = {
           productModal.hide();
         })
         .catch((error) => {
-          alert(error.data.message);
+          alert('新增產品失敗',error.data.message);
         })
     },
 
@@ -156,7 +156,7 @@ const app = {
           productModal.hide();
         })
         .catch((error) => {
-          alert(error.data.message);
+          alert('更新產品資料失敗',error.data.message);
         })
     },
 
