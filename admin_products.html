@@ -95,8 +95,8 @@
                     <img style="max-width: 280px; max-height: 280px;" class="img-fluid" :src="newProduct.imageUrl">
                   </div>
                   <hr>
-                  <div v-if="Array.isArray(newProduct.imagesUrl)">
-                    <div class="mb-1" v-for="(img, index) in newProduct.imagesUrl" :key="index">
+                  <template v-if="Array.isArray(newProduct.imagesUrl)">
+                    <div class="mb-1" v-for="(img, index) in newProduct.imagesUrl" :key="index + 123">
                       <div class="mb-3">
                         <label :for="`imagesUrl${index}`" class="form-label">圖片網址</label>
                         <input :id="`imagesUrl${index}`" v-model.lazy="newProduct.imagesUrl[index]" type="text" class="form-control"
@@ -115,7 +115,7 @@
                         刪除圖片
                       </button>
                     </div>
-                  </div>
+                  </template>
                   <div v-else>
                     <button class="btn btn-outline-primary btn-sm d-block w-100" @click="addImagesUrl">
                       新增圖片
@@ -180,9 +180,16 @@
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                 取消
               </button>
-              <button type="button" class="btn btn-primary" @click="updateProduct">
-                確認
-              </button>
+              <span v-if="!addNew">
+                <button type="button" class="btn btn-primary" @click="updateProduct">
+                  確認
+                </button>
+              </span>
+              <span v-else>
+                <button type="button" class="btn btn-primary" @click="addNewProduct">
+                  確認
+                </button>
+              </span>
             </div>
           </div>
         </div>

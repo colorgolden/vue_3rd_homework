@@ -46,7 +46,6 @@ const app = {
     login() {
       const username = document.querySelector('#email').value;
       const password = document.querySelector('#password').value;
-      console.log(username,password);
       const users = {
         username,
         password
@@ -56,15 +55,12 @@ const app = {
       // #2 發送 API 至遠端並登入（並儲存 Token）
       axios.post(`${url}/v2/admin/signin`, users)
         .then((res) => {
-          console.log(res);
-          console.log(username,password);
           window.location.href = 'admin_products.html'; //跳轉到products頁面
           const { token, expired } = res.data;
           document.cookie = `newToken=${token}; expires=${new Date(expired)};`;
         })
         .catch((error) => {
-          console.log(username,password);
-          console.dir(error);
+          alert(error.data.message);
         })
     },
 
@@ -83,7 +79,7 @@ const app = {
           .catch((error) => {
             alert("尚未登入會員，請重新登入！");
             window.location.href = 'index.html'; //跳轉到login頁面
-            console.dir(error);
+            alert(error.data.message);
             return;
           })
       } else {
@@ -100,7 +96,7 @@ const app = {
           this.products = res.data.products;
         })
         .catch((error) => {
-          console.dir(error);
+          alert(error.data.message);
         })
     },
 
@@ -129,12 +125,12 @@ const app = {
     delProduct(){
       axios.delete(`${url}/api/${path}/admin/product/${this.newProduct.id}`)
       .then((res) => {
-        alert(res.data.message);
+        alert('刪除產品成功');
         this.getProducts(); //重新取得產品資料
         delProductModal.hide();
       })
       .catch((error) => {
-        alert(error);
+        alert(error.data.message);
       })
     },
 
@@ -142,12 +138,12 @@ const app = {
       // #6 新增單一產品資訊
       axios.post(`${url}/v2/api/${path}/admin/product`,{ data: this.newProduct })
         .then((res) => {
-          alert(res.data.message);
+          alert('新增產品成功');
           this.getProducts();
           productModal.hide();
         })
         .catch((error) => {
-          alert(error.response.data.message);
+          alert(error.data.message);
         })
     },
 
@@ -155,12 +151,12 @@ const app = {
       // #7 新增單一產品資訊
       axios.put(`${url}/v2/api/${path}/admin/product/${this.newProduct.id}`,{ data: this.newProduct })
         .then((res) => {
-          alert(res.data.message);
+          alert('更新產品成功');
           this.getProducts();
           productModal.hide();
         })
         .catch((error) => {
-          alert(error.response.data.message);
+          alert(error.data.message);
         })
     },
 
